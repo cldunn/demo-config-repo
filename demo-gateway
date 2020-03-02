@@ -1,0 +1,15 @@
+spring:
+  session:
+    store-type: redis
+  redis:
+    port: 6379
+zuul: 
+  retryable: true
+  routes:
+    home-resource-ms:
+      path: /home/**
+      sensitiveHeaders: Authorization, Set-Cookie
+security:
+  user:
+    name: demo-gateway
+    password: password
